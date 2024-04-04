@@ -38,59 +38,60 @@ This covers various aspects of data transformation using Power Query in Power BI
 
 **Data Cleansing**
 ------------------------------------------------------------------------
-Remove duplicate rows: Table.Distinct(table) 
+1. Remove duplicate rows: Table.Distinct(table) 
 
-Remove blank rows: Table.SelectRows(table, each not List.IsEmpty(Record.FieldValues(_))) 
+2. Remove blank rows: Table.SelectRows(table, each not List.IsEmpty(Record.FieldValues(_))) 
 
-Replace null values with a specific value: Table.ReplaceValue(table, null, 0, Replacer.ReplaceValue, {"ColumnName"}) 
+3. Replace null values with a specific value: Table.ReplaceValue(table, null, 0, Replacer.ReplaceValue, {"ColumnName"}) 
 
-Remove rows with errors: Table.RemoveRowsWithErrors(table) 
+4. Remove rows with errors: Table.RemoveRowsWithErrors(table) 
 
-Fill down missing values: Table.FillDown(table, {"ColumnName"}) 
+5. Fill down missing values: Table.FillDown(table, {"ColumnName"}) 
 
-Fill up missing values: Table.FillUp(table, {"ColumnName"}) 
+6. Fill up missing values: Table.FillUp(table, {"ColumnName"}) 
 
-Trim whitespace from text: Table.TransformColumns(table, {{"ColumnName", Text.Trim, type text}}) 
+7. Trim whitespace from text: Table.TransformColumns(table, {{"ColumnName", Text.Trim, type text}}) 
 
-Clean text by removing non-printable characters: Table.TransformColumns(table, {{"ColumnName", Text.Clean, type text}}) 
+8. Clean text by removing non-printable characters: Table.TransformColumns(table, {{"ColumnName", Text.Clean, type text}}) 
 
-Capitalize text: Table.TransformColumns(table, {{"ColumnName", Text.Proper, type text}})
+9. Capitalize text: Table.TransformColumns(table, {{"ColumnName", Text.Proper, type text}})
 
-Lowercase text: Table.TransformColumns(table, {{"ColumnName", Text.Lower, type text}}) 
+10. Lowercase text: Table.TransformColumns(table, {{"ColumnName", Text.Lower, type text}}) 
 
-Uppercase text: Table.TransformColumns(table, {{"ColumnName", Text.Upper, type text}})
+11. Uppercase text: Table.TransformColumns(table, {{"ColumnName", Text.Upper, type text}})
 
 **Data Trasformation**
 ------------------------------------------------------------------------
-Rename columns: Table.RenameColumns(table, {"OldColumnName", "NewColumnName"}) 
 
-Reorder columns: Table.ReorderColumns(table, {"Column1", "Column2", "Column3"}) 
+1. Rename columns: Table.RenameColumns(table, {"OldColumnName", "NewColumnName"}) 
 
-Remove columns: Table.RemoveColumns(table, {"ColumnName"}) 
+2. Reorder columns: Table.ReorderColumns(table, {"Column1", "Column2", "Column3"}) 
 
-Filter rows based on a condition: Table.SelectRows(table, each [ColumnName] > 10) 
+3. Remove columns: Table.RemoveColumns(table, {"ColumnName"}) 
 
-Sort rows: Table.Sort(table, {{"ColumnName", Order.Ascending}}) 
+4. Filter rows based on a condition: Table.SelectRows(table, each [ColumnName] > 10) 
 
-Group rows and aggregate: Table.Group(table, {"GroupColumnName"}, {{"AggregateColumnName", each List.Sum([ColumnName]), type number}}) 
+5. Sort rows: Table.Sort(table, {{"ColumnName", Order.Ascending}}) 
 
-Pivot data: Table.Pivot(table, List.Distinct(table[PivotColumnName]), "PivotColumnName", "ValueColumnName", List.Sum) 
+6. Group rows and aggregate: Table.Group(table, {"GroupColumnName"}, {{"AggregateColumnName", each List.Sum([ColumnName]), type number}}) 
 
-Unpivot data: Table.UnpivotOtherColumns(table, {"ColumnName"}, "AttributeColumn", "ValueColumn") 
+7. Pivot data: Table.Pivot(table, List.Distinct(table[PivotColumnName]), "PivotColumnName", "ValueColumnName", List.Sum) 
 
-Transpose a table: Table.Transpose(table) 
+8. Unpivot data: Table.UnpivotOtherColumns(table, {"ColumnName"}, "AttributeColumn", "ValueColumn") 
 
-Split a column by delimiter: Table.SplitColumn(table, "ColumnName", Splitter.SplitTextByDelimiter(","), {"Column1", "Column2"}) 
+9. Transpose a table: Table.Transpose(table) 
 
-Merge columns: Table.CombineColumns(table, {"Column1", "Column2"}, Combiner.CombineTextByDelimiter(" "), "NewColumnName") 
+10. Split a column by delimiter: Table.SplitColumn(table, "ColumnName", Splitter.SplitTextByDelimiter(","), {"Column1", "Column2"}) 
 
-Extract text before a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.BeforeDelimiter(_, " "), type text}})
+11. Merge columns: Table.CombineColumns(table, {"Column1", "Column2"}, Combiner.CombineTextByDelimiter(" "), "NewColumnName") 
 
-Extract text after a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.AfterDelimiter(_, " "), type text}}) 
+12. Extract text before a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.BeforeDelimiter(_, " "), type text}})
 
-Extract text between delimiters: Table.TransformColumns(table, {{"ColumnName", each Text.BetweenDelimiters(_, "{", "}"), type text}}) 
+13. Extract text after a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.AfterDelimiter(_, " "), type text}}) 
 
-Replace text: Table.TransformColumns(table, {{"ColumnName", each Text.Replace(_, "old", "new"), type text}}) 
+14. Extract text between delimiters: Table.TransformColumns(table, {{"ColumnName", each Text.BetweenDelimiters(_, "{", "}"), type text}}) 
 
-Add a custom column with a formula: Table.AddColumn(table, "NewColumnName", each [Column1] + [Column2], type number) 
+15. Replace text: Table.TransformColumns(table, {{"ColumnName", each Text.Replace(_, "old", "new"), type text}}) 
+
+16. Add a custom column with a formula: Table.AddColumn(table, "NewColumnName", each [Column1] + [Column2], type number) 
 
