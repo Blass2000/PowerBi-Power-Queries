@@ -15,7 +15,7 @@ WS PowerBi Tips and Power Queries
 This covers various aspects of data transformation using Power Query in Power BI, including connecting to data sources, data cleansing, data transformation, date and time operations, aggregation and grouping, filtering and sorting, joins and merges, conditional columns and rows, text operations, number operations, and more.
 
 **Data Import Transformation**
-
+------------------------------------------------------------------------
 1. Import data from a CSV file: Csv.Document(File.Contents("C:\data.csv"))
 
 2. Import data from an Excel file: Excel.Workbook(File.Contents("C:\data.xlsx"))
@@ -37,7 +37,7 @@ This covers various aspects of data transformation using Power Query in Power BI
 10. Import data from a text file: Text.FromBinary(File.Contents("C:\data.txt"))
 
 **Data Cleansing**
-
+------------------------------------------------------------------------
 Remove duplicate rows: Table.Distinct(table) 
 
 Remove blank rows: Table.SelectRows(table, each not List.IsEmpty(Record.FieldValues(_))) 
@@ -61,7 +61,7 @@ Lowercase text: Table.TransformColumns(table, {{"ColumnName", Text.Lower, type t
 Uppercase text: Table.TransformColumns(table, {{"ColumnName", Text.Upper, type text}})
 
 **Data Trasformation**
-
+------------------------------------------------------------------------
 Rename columns: Table.RenameColumns(table, {"OldColumnName", "NewColumnName"}) 
 
 Reorder columns: Table.ReorderColumns(table, {"Column1", "Column2", "Column3"}) 
