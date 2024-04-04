@@ -5,8 +5,11 @@ WS PowerBi Tips and Power Queries
 𝗨𝘀𝗶𝗻𝗴 𝗣𝗼𝘄𝗲𝗿 𝗤𝘂𝗲𝗿𝘆 𝗶𝗻 𝗱𝗮𝘁𝗮 𝘁𝗿𝗮𝗻𝘀𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝘄𝗶𝘁𝗵𝗶𝗻 𝗣𝗼𝘄𝗲𝗿 𝗕𝗜 𝗵𝗮𝘀 𝘀𝗲𝘃𝗲𝗿𝗮𝗹 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗯𝗲𝗻𝗲𝗳𝗶𝘁𝘀 𝗮𝗻𝗱 𝗮𝗱𝘃𝗮𝗻𝘁𝗮𝗴𝗲𝘀:
 
 1️⃣ Power Query is tightly integrated with Power BI, enabling seamless data transformation within the Power BI environment.
+
 2️⃣ Power Query includes data profiling capabilities that allow users to quickly analyze the structure and quality of their data.
+
 3️⃣ Power Query supports the creation of reusable data transformation steps, known as queries, which can be applied to multiple datasets.
+
 4️⃣ Power Query includes optimizations for performance, such as query folding and data load settings.
 
 This covers various aspects of data transformation using Power Query in Power BI, including connecting to data sources, data cleansing, data transformation, date and time operations, aggregation and grouping, filtering and sorting, joins and merges, conditional columns and rows, text operations, number operations, and more.
