@@ -14,7 +14,9 @@ This covers various aspects of data transformation using Power Query in Power BI
 **Data Import Transformation**
 
 1.Import data from a CSV file: Csv.Document(File.Contents("C:\data.csv"))
+
 2.Import data from an Excel file: Excel.Workbook(File.Contents("C:\data.xlsx"))
+
 3.Import data from a JSON file: Json.Document(File.Contents("C:\data.json"))
 
 Import data from a SQL Server database: Sql.Database("server", "database", [Query="SELECT * FROM table"]) 
