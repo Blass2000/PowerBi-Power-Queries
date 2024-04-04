@@ -13,22 +13,22 @@ This covers various aspects of data transformation using Power Query in Power BI
 
 **Data Import Transformation**
 
-1.Import data from a CSV file: Csv.Document(File.Contents("C:\data.csv"))
+1. Import data from a CSV file: Csv.Document(File.Contents("C:\data.csv"))
 
-2.Import data from an Excel file: Excel.Workbook(File.Contents("C:\data.xlsx"))
+2. Import data from an Excel file: Excel.Workbook(File.Contents("C:\data.xlsx"))
 
-3.Import data from a JSON file: Json.Document(File.Contents("C:\data.json"))
+3. Import data from a JSON file: Json.Document(File.Contents("C:\data.json"))
 
-Import data from a SQL Server database: Sql.Database("server", "database", [Query="SELECT * FROM table"]) 
+4. Import data from a SQL Server database: Sql.Database("server", "database", [Query="SELECT * FROM table"]) 
 
-Import data from a web API: Web.Contents("https://api.example.com/data")
+5. Import data from a web API: Web.Contents("https://api.example.com/data")
 
-Import data from a folder: Folder.Files("C:\data") 
+6. Import data from a folder: Folder.Files("C:\data") 
 
-Import data from a SharePoint list: SharePoint.Tables("https://contoso.sharepoint.com/sites/mysite", "ListName") 
+7. Import data from a SharePoint list: SharePoint.Tables("https://contoso.sharepoint.com/sites/mysite", "ListName") 
 
-Import data from an OData feed: OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc") 
+8. Import data from an OData feed: OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc") 
 
-Import data from an ODBC source: Odbc.Query("dsn=MyDSN", "SELECT * FROM table") 
+9. Import data from an ODBC source: Odbc.Query("dsn=MyDSN", "SELECT * FROM table") 
 
-Import data from a text file: Text.FromBinary(File.Contents("C:\data.txt"))
+10. Import data from a text file: Text.FromBinary(File.Contents("C:\data.txt"))
