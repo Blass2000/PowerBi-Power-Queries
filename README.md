@@ -61,6 +61,7 @@ Lowercase text: Table.TransformColumns(table, {{"ColumnName", Text.Lower, type t
 Uppercase text: Table.TransformColumns(table, {{"ColumnName", Text.Upper, type text}})
 
 **Data Trasformation**
+
 Rename columns: Table.RenameColumns(table, {"OldColumnName", "NewColumnName"}) 
 
 Reorder columns: Table.ReorderColumns(table, {"Column1", "Column2", "Column3"}) 
