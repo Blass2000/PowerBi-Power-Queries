@@ -62,18 +62,34 @@ Uppercase text: Table.TransformColumns(table, {{"ColumnName", Text.Upper, type t
 
 **Data Trasformation**
 Rename columns: Table.RenameColumns(table, {"OldColumnName", "NewColumnName"}) 
+
 Reorder columns: Table.ReorderColumns(table, {"Column1", "Column2", "Column3"}) 
+
 Remove columns: Table.RemoveColumns(table, {"ColumnName"}) 
+
 Filter rows based on a condition: Table.SelectRows(table, each [ColumnName] > 10) 
+
 Sort rows: Table.Sort(table, {{"ColumnName", Order.Ascending}}) 
+
 Group rows and aggregate: Table.Group(table, {"GroupColumnName"}, {{"AggregateColumnName", each List.Sum([ColumnName]), type number}}) 
+
 Pivot data: Table.Pivot(table, List.Distinct(table[PivotColumnName]), "PivotColumnName", "ValueColumnName", List.Sum) 
+
 Unpivot data: Table.UnpivotOtherColumns(table, {"ColumnName"}, "AttributeColumn", "ValueColumn") 
+
 Transpose a table: Table.Transpose(table) 
+
 Split a column by delimiter: Table.SplitColumn(table, "ColumnName", Splitter.SplitTextByDelimiter(","), {"Column1", "Column2"}) 
+
 Merge columns: Table.CombineColumns(table, {"Column1", "Column2"}, Combiner.CombineTextByDelimiter(" "), "NewColumnName") 
+
 Extract text before a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.BeforeDelimiter(_, " "), type text}})
+
 Extract text after a delimiter: Table.TransformColumns(table, {{"ColumnName", each Text.AfterDelimiter(_, " "), type text}}) 
+
 Extract text between delimiters: Table.TransformColumns(table, {{"ColumnName", each Text.BetweenDelimiters(_, "{", "}"), type text}}) 
+
 Replace text: Table.TransformColumns(table, {{"ColumnName", each Text.Replace(_, "old", "new"), type text}}) 
+
 Add a custom column with a formula: Table.AddColumn(table, "NewColumnName", each [Column1] + [Column2], type number) 
+
